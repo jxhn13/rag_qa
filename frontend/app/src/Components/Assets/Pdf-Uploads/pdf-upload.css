@@ -1,0 +1,29 @@
+.insert-file > input{
+    display: grid;
+    height: 50px;
+    font-size: 15px;
+    margin-left: 10px;
+
+}
+
+.insert-file
+{
+    
+    margin-bottom: 25px;
+}
+
+.insert-file>button{
+    background-color: white;
+    height: 40px;
+    width: 100px;
+    border: 3px solid black;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: 500px;
+    margin-bottom: 8px;
+}
+
+.insert-file>button:hover{
+    color: white;
+    background-color: rgb(71, 70, 70);
+}
