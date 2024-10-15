@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  frontend:
+    build:
+      context: ./frontend  
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+
+  chat:
+    build:
+      context: ./chat
+      dockerfile: Dockerfile
+    ports:
+      - "5003:5003"
+
+  upload:
+    build:
+      context: ./upload
+      dockerfile: Dockerfile
+    ports:
+      - "5002:5002"
+
+  login:
+    build:
+      context: ./login
+      dockerfile: Dockerfile
+    ports:
+      - "5001:5001"

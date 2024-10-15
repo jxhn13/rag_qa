@@ -17,7 +17,8 @@ body {
   align-items: center;
   min-height: 90vh;
 
-  background:url('./Components/Assets/simple-background.jpg');
+  /* background:url('./Components/Assets/simple-background.jpg'); */
+  background-color: rgb(255	254	238);
 
 }
 

@@ -1,11 +1,11 @@
 from flask import Flask
-from rag_chat import process_chat
+from flask_cors import CORS 
+from chat import process_chat
 
 app = Flask(__name__)
+CORS(app)  
 
-@app.route('/chat', methods=['POST'])
-def chat():
-    return process_chat()
+app.add_url_rule('/chat', view_func=process_chat, methods=['POST'])
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5003)
+    app.run(debug=True, port=5003)

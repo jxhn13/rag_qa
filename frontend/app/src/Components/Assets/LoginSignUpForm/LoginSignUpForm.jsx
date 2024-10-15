@@ -21,6 +21,32 @@ function LoginForm()
     const navigate = useNavigate()
 
     const handleSubmit = async () => {
+
+
+        const minLength = 8;
+        const hasUpperCase = /[A-Z]/.test(password);
+        const hasLowerCase = /[a-z]/.test(password);
+        const hasDigit = /[0-9]/.test(password);
+
+        if (password.length < minLength) {
+            alert("Password must be at least 8 characters long.");
+            return; 
+        }
+        if (!hasUpperCase) {
+            alert("Password must contain at least one uppercase letter.");
+            return; 
+        }
+        if (!hasLowerCase) {
+            alert("Password must contain at least one lowercase letter.");
+            return; 
+        }
+        if (!hasDigit) {
+            alert("Password must contain at least one digit.");
+            return; 
+        }
+
+
+        
         try {
             let response;
             
@@ -66,7 +92,7 @@ function LoginForm()
                 <FaUser className="icon" />
                 </div> }
 
-            
+
 
             
 
@@ -88,9 +114,9 @@ function LoginForm()
                 <FaLock className="icon"/>
             </div>
                 
-             <div className="buttons">
-                <div className={action === "Login" ? "submit gray" : "submit"} onClick={()=>{setAction("Sign Up")}}>Sign Up</div>
-                <div className={action === "Sign Up" ? "submit gray": "submit"} onClick={()=>{setAction("Login")}}>Login</div>
+                <div className="buttons">
+                    <div className={action === "Login" ? "submit gray" : "submit"} onClick={()=>{setAction("Sign Up")}}>Sign Up</div>
+                    <div className={action === "Sign Up" ? "submit gray": "submit"} onClick={()=>{setAction("Login")}}>Login</div>
                 </div> 
 
                 <ButtonTab onSubmit={handleSubmit} />

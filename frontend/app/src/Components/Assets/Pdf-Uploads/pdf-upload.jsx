@@ -28,19 +28,46 @@ const MultiplePDFUpload = () => {
     }
   };
 
+  const handleChooseFile = () => {
+    document.getElementById("fileInput").click();
+  }
+
+  const handleFileList = () => {
+    if (selectedFiles.length === 0) return null;
+
+    return (
+      <ul>
+        {Array.from(selectedFiles).map((file, index) => (
+          <li key={index}>{file.name}</li>
+        ))}
+      </ul>
+    );
+  }
+
+  const handleClearList = () => {
+    setSelectedFiles([]);
+  }
+
   return (
     <div className='insert-file'>
       <input
+        id='fileInput'
         type="file"
         accept="application/pdf"
         multiple
         onChange={handleFileChange}
       />
-      <button onClick={handleUpload}>Upload</button>
+
+      <div className="buttonDivs">
+        <button id='chooseFile' type='button' onClick={handleChooseFile}>Choose File</button>
+        <button className='clearFiles' onClick={handleClearList}>Clear</button>
+        <button className='uploadButton' onClick={handleUpload}>Upload</button>
+      </div>
+      <p className='showFiles'>{handleFileList()}</p>
+
       {message && <p>{message}</p>} {/* Display message */}
     </div>
   );
 };
 
 export default MultiplePDFUpload;
-

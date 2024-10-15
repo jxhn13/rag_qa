@@ -1,5 +1,5 @@
-llama_index
-openai
-pypdf2
-docx
-flask
+Flask==2.2.5
+pinecone-client==2.2.1
+cohere==4.10.0
+llama-index==0.7.10
+requests==2.31.0
